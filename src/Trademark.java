@@ -7,9 +7,7 @@ import java.util.Random;
 public class Trademark {
 
     public static final Random r = new Random();
-
     public Trademark(){}
-
     public static final String[] fruits2 = new String[] {
             "strawberry",
             "plum",
@@ -25,9 +23,7 @@ public class Trademark {
 
     public static List<Fruits> generateFruits(int count) {
         List<Fruits> fruits = new ArrayList<>(count);
-
         RandomDate rd = new RandomDate(LocalDate.of(2017, 8, 1), LocalDate.of(2017, 12, 1));
-
         for (int i = 0; i < count; i++) {
             Fruits fruits1 = new Fruits();
             fruits1.type = fruits2[r.nextInt(fruits2.length - 1)];
