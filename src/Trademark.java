@@ -49,8 +49,6 @@ public class Trademark {
         }
     }
 
-
-
     public static void getAvailableFruits(LocalDate date, String type, List<Fruits> fruits){
         int ourDate = (int) date.toEpochDay();
 

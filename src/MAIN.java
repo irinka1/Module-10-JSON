@@ -21,8 +21,6 @@ public class MAIN {
         return json;
     }
 
-
-
     public static void main(String[] args) throws IOException {
         int count = 20;
         List<Fruits> fruits = Trademark.generateFruits(count);
