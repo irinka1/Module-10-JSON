@@ -1,0 +1,39 @@
+Exercise 1
+
+Your friend opened a shop with fruit. But unfortunately he does not cope with all the new information that comes along. 
+He asked you to develop a system that would help him with this.
+
+It will be necessary to create a class of fruit. Fruit stores:
+view (strawberry, apple, pear, etc.). Come up with 10 kinds.
+shelf life (10 days, 20 days, etc.)
+date of delivery
+price
+
+And the class is a shop. He will be responsible for storing information about store's storage.
+
+It is necessary to accept the supply of fruit and supplement the database of the warehouse with new information. 
+void addFruits (String pathToJsonFile) - the method takes the path to the file inside this is the json with the fruits and the date of delivery. 
+One file is one delivery. The database can be stored in the collection while the program is running.
+
+
+We need a void save (String pathToJsonFile) method that saves all the information from the store's warehouse to the json file.
+Similar method void load (String pathToJsonFile) which deletes the current information from the collection and loads the new one from the saved version.
+In the main class of the program, check all methods for operability. 
+Create an object of the shop class, give it several supplies with different data and dates. Then save the information from the warehouse and check the received json file.
+
+Exercise 2
+Also, try downloading store information to the store directly from the received json file.
+Add to the class-shop method that can tell which products will deteriorate to a given date List <Fruit> getSpoiledFruits (Date date)
+And a method that returns a list of ready-to-sell products
+List <Fruit> getAvailableFruits (Date date)
+ 
+In the main class of the program, check that these methods work.
+
+Exercise 3
+Reload the available methods of spoiledFruits and availableFruits.
+To receive one more parameter - the type of fruit
+List <Fruit> getSpoiledFruits (Date date, Type type)
+List <Fruit> getAvailableFruits (Date date, Type type)
+Work as before, but now filter only on a given type of fruit
+Add a method that returns the products that were delivered on the given date List <Fruit> getAddedFruits (Date date)
+ and its redefined version - List <Fruit> getAddedFruits (Date date, Type type)

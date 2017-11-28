@@ -24,20 +24,25 @@ public class MAIN {
 
 
     public static void main(String[] args) throws IOException {
-        int count = 5;
+        int count = 20;
         List<Fruits> fruits = Trademark.generateFruits(count);
         String json = JSON.toJSONString(fruits);
         System.out.println(json);
 
         Trademark trademark  = new Trademark();
         System.out.println("Spoiled Fruits:");
-        trademark.getSpoiledFruits(LocalDate.of(2017, 07, 1), count,fruits);
+        trademark.getSpoiledFruits(LocalDate.of(2017, 11, 20), fruits);
+        System.out.println("This fruit is spolied:");
+        trademark.getSpoiledFruits(LocalDate.of(2017, 11, 20),fruits,"plum");
         System.out.println("Available Fruits:");
-        trademark.getAvailableFruits(LocalDate.now(), count, fruits );
+        trademark.getAvailableFruits(LocalDate.now(), fruits );
+        System.out.println("Ready to sell:");
+        trademark.getAvailableFruits(LocalDate.now(), "plum" , fruits);
 
         writeToFile(json, "files/data.txt");
         String json1 = loadFromFile("files/data.txt");
-        List<Fruits> fruits1 = JSON.parseArray(json1, Fruits.class);
+        List<Fruits> fruits2 = JSON.parseArray(json1, Fruits.class);
+        System.out.println("Our JSON from file:");
         System.out.println(json1);
     }
 }

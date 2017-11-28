@@ -39,25 +39,47 @@ public class Trademark {
         return fruits;
     }
 
-    public static void getAvailableFruits(LocalDate date, int count, List<Fruits> fruitsList){
+    public static void getAvailableFruits(LocalDate date, List<Fruits> fruitsList){
         int currentDate = (int) date.toEpochDay();
-        for (int i = 0; i < count; i++) {
+        for (int i = 0; i < fruitsList.size(); i++) {
             int day = ((int) fruitsList.get(i).getDate().toEpochDay()) + fruitsList.get(i).getShelfLife();
             if (currentDate < day){
                 System.out.println(fruitsList.get(i).toString());
             }
         }
-
     }
 
-    public static void getSpoiledFruits(LocalDate date2, int count, List<Fruits> fruitsList) {
-        for (int i = 1; i < count; i++) {
+
+
+    public static void getAvailableFruits(LocalDate date, String type, List<Fruits> fruits){
+        int ourDate = (int) date.toEpochDay();
+
+        for (int i = 0; i < fruits.size(); i++) {
+            int day = ((int) fruits.get(i).getDate().toEpochDay()) + fruits.get(i).getShelfLife();
+
+            if (fruits.get(i).getType().equals(type) && ourDate < day) {
+                System.out.println(fruits.get(i).toString()+i);
+            }
+        }
+    }
+
+    public static void getSpoiledFruits(LocalDate date2,  List<Fruits> fruitsList) {
+        for (int i = 0; i < fruitsList.size(); i++) {
             int ourDay = (int) date2.toEpochDay();
-            int fruitDay = (int) fruitsList.get(i).date.toEpochDay();
-            if (ourDay < fruitDay) {
+            int fruitDay = (int) fruitsList.get(i).date.toEpochDay() + fruitsList.get(i).getShelfLife();
+            if (ourDay > fruitDay) {
                 System.out.println(fruitsList.get(i).toString());
             }
         }
     }
 
+    public static void getSpoiledFruits(LocalDate date2,  List<Fruits> fruitsList, String typeOfFruit) {
+        for (int i = 0; i < fruitsList.size(); i++) {
+            int ourDay = (int) date2.toEpochDay();
+            int fruitDay = (int) fruitsList.get(i).date.toEpochDay()+ fruitsList.get(i).getShelfLife();
+            if (ourDay > fruitDay && fruitsList.get(i).getType().equals(typeOfFruit)) {
+                System.out.println(fruitsList.get(i).toString()+i);
+            }
+        }
+    }
 }
