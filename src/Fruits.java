@@ -1,18 +1,51 @@
+import java.time.LocalDate;
+import java.util.*;
+
+
 public class Fruits {
 
-    public Type type;
-    public int shelfLife;
-    public int date;
-    public double price;
-    public enum Type {strawberry, plum, peach, cherry, pear, raspberries, blackberry, watermelon, apple,barberry}
+    @Override
+    public String toString() {
+        return "Fruits{" +
+                "type='" + type + '\'' +
+                '}';
+    }
 
-    public Fruits(Type type, int shelfLife, int date, double price) {
+    public String type;
+    public int shelfLife;
+    public LocalDate date;
+    public double price;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
         this.type = type;
+    }
+
+    public int getShelfLife() {
+        return shelfLife;
+    }
+
+    public void setShelfLife(int shelfLife) {
         this.shelfLife = shelfLife;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public Fruits() {
-    }
 }

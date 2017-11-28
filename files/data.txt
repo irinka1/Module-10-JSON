@@ -1,0 +1,1 @@
+[{"date":"2017-10-04","price":93.0,"shelfLife":72,"type":"cherry"},{"date":"2017-10-02","price":125.0,"shelfLife":35,"type":"raspberries"},{"date":"2017-10-04","price":83.0,"shelfLife":86,"type":"pear"},{"date":"2017-10-10","price":78.0,"shelfLife":37,"type":"plum"},{"date":"2017-09-02","price":45.0,"shelfLife":15,"type":"blackberry"}]
